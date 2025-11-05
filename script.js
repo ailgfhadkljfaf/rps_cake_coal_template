@@ -32,14 +32,25 @@ cake.src = './assets/cake_image.jpg';
 cake.width = 200;
 cake.height = 200;
 
+
+let thing = document.createElement('img');
+thing.src = './assets/brown_thing.jpg';
+thing.width = 200;
+thing.height = 200;
+
 if (computer_choice == choice)
 {
-    alert('draw!')
+    alert('draw!\n' +"Your choice: " + choice + "\nComputer's choice: " + computer_choice)
     document.getElementById('rps').appendChild(coal)
+}
+else if((computer_choice=='rock' && choice=='scissors') || (computer_choice=='paper' && choice=='rock') || (computer_choice=='scissors' && choice=='paper'))
+{
+    alert('Loose!\n' +"Your choice: " + choice + "\nComputer's choice: " + computer_choice)
+    document.getElementById('rps').appendChild(thing)
 }
 else
 {
-    alert('not draw!')
+    alert('Win!\n'+"Your choice: " + choice + "\nComputer's choice: " + computer_choice);
     document.getElementById('rps').appendChild(cake)
 }
 
